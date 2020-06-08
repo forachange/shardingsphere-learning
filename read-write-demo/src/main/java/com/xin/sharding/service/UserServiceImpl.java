@@ -68,9 +68,9 @@ public class UserServiceImpl implements ExampleService {
     
     private void deleteData(final List<Long> userIds) throws SQLException {
         log.info("---------------------------- Delete Data ----------------------------");
-//        for (Long each : userIds) {
-//            userRepository.delete(each);
-//        }
+        for (Long each : userIds) {
+            userRepository.delete(each);
+        }
     }
     
     @Override

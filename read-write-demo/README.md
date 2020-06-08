@@ -152,21 +152,31 @@
 4. 运行结果中 `Actual SQL` 会显示使用了哪个数据源。查询会使用不同的从库，增删改会使用主库。
 
    ```
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: CREATE TABLE IF NOT EXISTS t_user (user_id INT NOT NULL AUTO_INCREMENT, user_name VARCHAR(200), user_name_plain VARCHAR(200), pwd VARCHAR(200), assisted_query_pwd VARCHAR(200), PRIMARY KEY (user_id)); 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: TRUNCATE TABLE t_user; 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
-   [ShardingSphere-SQL] Actual SQL: ds-slave-0 ::: SELECT * FROM t_user; 
-   [ShardingSphere-SQL] Actual SQL: ds-slave-1 ::: SELECT * FROM t_user; 
-   [ShardingSphere-SQL] Actual SQL: ds-master ::: DROP TABLE IF EXISTS t_user; 
+    Actual SQL: ds-master ::: CREATE TABLE IF NOT EXISTS t_user (user_id INT NOT NULL AUTO_INCREMENT, user_name VARCHAR(200), user_name_plain VARCHAR(200), pwd VARCHAR(200), assisted_query_pwd VARCHAR(200), PRIMARY KEY (user_id)); 
+    Actual SQL: ds-master ::: TRUNCATE TABLE t_user; 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-master ::: INSERT INTO t_user (user_id, user_name, pwd) VALUES (?, ?, ?) 
+    Actual SQL: ds-slave-0 ::: SELECT * FROM t_user; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-master ::: DELETE FROM t_user WHERE user_id = ?; 
+    Actual SQL: ds-slave-1 ::: SELECT * FROM t_user; 
+    Actual SQL: ds-master ::: DROP TABLE IF EXISTS t_user; 
    ```
 
    
